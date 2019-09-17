@@ -1,6 +1,8 @@
 ---
-- hosts: all
-  become_user: root
+- name: Perform APT upgrade
+  hosts: all
+  remote_user: root
+  become: yes
   environment:
     LC_ALL: C
     LANG: C
