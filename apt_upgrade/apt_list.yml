@@ -14,4 +14,3 @@
 
   - name: List upgradable packages
     command: apt list --upgradable
-
