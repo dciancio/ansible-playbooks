@@ -1,0 +1,12 @@
+---
+- hosts: nodes
+
+  tasks:
+  - name: test shell
+    shell: >
+      netstat -nat | egrep -v 'Active|State' | awk '{print $6}' | sort | uniq -c | sort -n
+    register: result
+
+  - debug:
+      msg: "{{ result.stdout }}"
+
